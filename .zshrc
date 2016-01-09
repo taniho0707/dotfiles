@@ -1,21 +1,26 @@
 # Set up the prompt
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+# autoload -Uz promptinit
+# promptinit
+# prompt adam1
 
 setopt histignorealldups sharehistory
 
-#autoload -U compinit
-#compinit
+export LANG=ja_JP.UTF-8
 autoload colors
 colors
-setopt auto_cd
+setopt auto_cd # ディレクトリ名の入力のみで移動する
 setopt nobeep
+setopt correct # コマンドのスペルを訂正する
+setopt magic_equal_subst # =以降も補完する(--prefix=/usrなど)
+setopt prompt_subst # プロンプト定義内で変数置換やコマンド置換を扱う
+setopt notify # バックグラウンドジョブの状態変化を即時報告する
+setopt equals # =commandを`which command`と同じ処理にする
 
-export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
-export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
-zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
+
+# export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
+# export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
+# zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -29,6 +34,10 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+setopt auto_list
+setopt list_types
+setopt list_packed
+bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -92,9 +101,12 @@ stack: $LBUFFER"
 }
 zle -N show_buffer_stack
 
-# # zsh-prompt
-# source /home/nonoho/git/zsh-git-prompt/zshrc.sh
-# PROMPT='%B%m%~%b$(git_super_status) %#'
+# zsh-prompt
+source /home/nonoho/git/zsh-git-prompt/zshrc.sh
+
+
+PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b $(git_super_status)
+ %# '
 
 
 # emacsview

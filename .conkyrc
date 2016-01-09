@@ -1,0 +1,101 @@
+alignment top_right
+background no
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont DejaVu Sans Mono:size=12
+gap_x 5
+gap_y 60
+minimum_size 5 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+# own_window_transparent yes
+own_window_type override
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+${color white}$nodename
+${color white}Uptime$color $uptime
+${color white}battery ${battery BAT0} ${battery_time BAT0}
+${color white}disk:  $color${fs_used /}/${fs_size /} 
+${color white}RAM:  ${mem} ${goto 150}${color black}${memgraph 15,200 0000ff ff0000}
+${color white}CPU1: ${cpu cpu1}% ${goto 150}${color black}${cpugraph cpu1 15,200 0000ff ff0000}
+${color white}CPU2: ${cpu cpu2}% ${goto 150}${color black}${cpugraph cpu2 15,200 0000ff ff0000}
+${color white}CPU3: ${cpu cpu3}% ${goto 150}${color black}${cpugraph cpu3 15,200 0000ff ff0000}
+${color white}CPU4: ${cpu cpu4}% ${goto 150}${color black}${cpugraph cpu4 15,200 0000ff ff0000}${color white}
+$hr
+${color white}Name               PID   CPU%   MEM%
+${color white} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+${color white} ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+${color white} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+${color white} ${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
+$hr
+# ${color white}Name               PID   CPU%   MEM%
+# ${color white} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+# ${color white} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+# ${color white} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+# ${color white} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+# $hr
+Network
+${if_gw}gw interface:${gw_iface} (${gw_ip})
+ns:${nameserver}
+external ip:${execpi 300 curl ifconfig.io }
+external host:${execpi 300 curl ifconfig.io/host }
+${else}
+No default Gateway
+${endif}
+# ${if_up wlp4s0}wlp4s0:${addrs wlp4s0}
+# ssid:${wireless_essid wlp4s0}
+# ${execpi 10 iwconfig wlp4s0 | awk '/IEEE/' |  awk '{print $2 " " $3}'}
+# ${execpi 10 iwconfig wlp4s0 | awk '/Frequency/' | awk '{print $2 $3}'}
+# Signal level:${execpi 10 iwconfig wlp4s0 | awk '/Signal level/' | awk '{print $4 $5}'| awk '{split($1, arr, "=")}; {print arr[2]}'}
+# ap mac: ${wireless_ap wlp4s0}
+# bitrate:${wireless_bitrate wlp4s0}
+# Link Quality:${wireless_link_qual wlp4s0}/${wireless_link_qual_max wlp4s0}
+# mode:${wireless_mode wlp4s0} ${endif}
+# ${if_up wlp4s0}${color white}up:${upspeed wlp4s0}${goto 150}${color black}${upspeedgraph wlp4s0 15,200 0000ff ff0000}
+#         ${color white}down:${downspeed wlp4s0}${goto 150}${color black}${downspeedgraph wlp4s0 15,200 0000ff ff0000}
+# ${end_if} ${color white}
+${if_up wlan0}wlan0:${addrs wlan0}
+        ${color white}up:   ${upspeed wlan0}${goto 150}${color black}        ${upspeedgraph wlan0 15,200 0000ff ff0000}
+        ${color white}down: ${downspeed wlan0}${goto 150}${color black}        ${downspeedgraph wlan0 15,200 0000ff ff0000}
+${endif}${color white}
+# TEXT
+# ${scroll 16 $nodename - $sysname $kernel on $machine | }
+# $hr
+# ${color grey}Uptime:$color $uptime
+# ${color grey}Frequency (in MHz):$color $freq
+# ${color grey}Frequency (in GHz):$color $freq_g
+# ${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+# ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+# ${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+# ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+# $hr
+# ${color grey}File systems:
+#  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+# ${color grey}Networking:
+# Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+# $hr
+# ${color grey}Name              PID   CPU%   MEM%
+# ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+# ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+# ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+# ${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
