@@ -111,7 +111,7 @@ zle -N show_buffer_stack
 source /home/nonoho/git/zsh-git-prompt/zshrc.sh
 
 
-PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b
+PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b $(git_super_status)
  %# '
 
 
@@ -124,6 +124,11 @@ function emacsview(){
 
 alias ls='ls --color -p -a'
 alias l='ls --color -p -a'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias gs='git status'
+alias c='clear'
 path=(/usr/share/pear/ $path)
 path=(/usr/share/pear/bin/ $path)
 path=(/usr/share/gnurx_v15.02_elf-1/bin/ $path)
