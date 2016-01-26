@@ -96,6 +96,14 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
     zstyle ':completion:*' completer _oldlist _complete
 fi
 
+# k
+# additional for ls
+# "k" to show ls -l with git status
+if [ -f ~/git/k/k.sh ]; then
+    source ~/git/k/k.sh
+fi
+
+
 # Command Line Stack
 # TODO: cannot work
 # Esc-q : stack
@@ -124,9 +132,6 @@ function emacsview(){
 
 alias ls='ls --color -p -a'
 alias l='ls --color -p -a'
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
 alias gs='git status'
 alias c='clear'
 path=(/usr/share/pear/ $path)
