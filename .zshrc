@@ -57,6 +57,12 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+
+# ibus settings
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 # eclipse for arm setting
 path=($HOME/bin/Eclipse/eclipse(N-/) $path)
 
@@ -105,7 +111,7 @@ zle -N show_buffer_stack
 source /home/nonoho/git/zsh-git-prompt/zshrc.sh
 
 
-PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b $(git_super_status)
+PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b
  %# '
 
 
