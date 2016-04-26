@@ -129,6 +129,8 @@ function emacsview(){
     emacsclient -n =(<&0)
 }
 
+export GOPATH=$HOME/go
+
 
 alias ls='ls --color -p -a'
 alias l='ls --color -p -a'
