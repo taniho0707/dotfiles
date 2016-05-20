@@ -139,5 +139,6 @@ alias c='clear'
 path=(/usr/share/pear/ $path)
 path=(/usr/share/pear/bin/ $path)
 path=(/usr/share/gnurx_v15.02_elf-1/bin/ $path)
+path=(/usr/share/gnurx_v16.01_elf-1/bin/ $path)
 
 path=(/home/nonoho/git/llvm_build/lib/ $path)
