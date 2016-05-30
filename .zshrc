@@ -17,6 +17,7 @@ setopt prompt_subst # プロンプト定義内で変数置換やコマンド置�
 setopt notify # バックグラウンドジョブの状態変化を即時報告する
 setopt equals # =commandを`which command`と同じ処理にする
 
+stty stop undef
 
 # export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 # export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
