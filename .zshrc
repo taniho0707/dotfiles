@@ -58,6 +58,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# zmv
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
 
 # ibus settings
 export GTK_IM_MODULE=ibus
@@ -133,6 +136,10 @@ function emacsview(){
 export GOPATH=$HOME/go
 export WINEPREFIX=$HOME/.wine
 
+# pushd
+setopt auto_pushd
+
+
 # aliases
 alias ls='ls --color -p -a'
 alias l='ls --color -p -a'
@@ -145,7 +152,6 @@ alias -s hs=runhaskell
 alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
 alias -s {pdf,PDF}=evince
 alias -s {html,htm}=firefox
-
 
 path=(/usr/share/pear/ $path)
 path=(/usr/share/pear/bin/ $path)
