@@ -153,6 +153,10 @@ alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
 alias -s {pdf,PDF}=evince
 alias -s {html,htm}=firefox
 
+emacs(){
+    command emacs $* &
+}
+
 path=(/usr/share/pear/ $path)
 path=(/usr/share/pear/bin/ $path)
 path=(/usr/share/gnurx_v15.02_elf-1/bin/ $path)
