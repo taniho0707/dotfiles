@@ -141,8 +141,11 @@ setopt auto_pushd
 
 
 # aliases
-alias ls='ls --color -p -a'
-alias l='ls --color -p -a'
+alias ls='ls --color -p'
+alias l='ls --color -p'
+alias ll='ls --color -p -l'
+alias la='ls --color -p -a'
+alias lla='ls --color -o -l -a'
 alias gs='git status'
 alias c='clear'
 
@@ -163,6 +166,11 @@ path=(/usr/share/gnurx_v15.02_elf-1/bin/ $path)
 path=(/usr/share/gnurx_v16.01_elf-1/bin/ $path)
 
 path=(/home/nonoho/git/llvm_build/lib/ $path)
+path=(/home/nonoho/seccamp/12F/pkttools-1.14/ $path)
+
+path=(/home/nonoho/.plenv/bin $path)
+eval "$(plenv init - zsh)"
+
 
 # PATH="/home/nonoho/perl5/bin${PATH:+:${PATH}}"; export PATH;
 # # PERL5LIB="/home/nonoho/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
