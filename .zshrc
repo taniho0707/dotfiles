@@ -122,6 +122,24 @@ zle -N show_buffer_stack
 # zsh-prompt
 source /home/nonoho/git/zsh-git-prompt/zshrc.sh
 
+# peco
+function peco-select-history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(\history -n 1 | \
+              eval $tac | \
+              awk '!a[$0]++' | \
+              peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
 
 PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b $(git_super_status)
  %# '
@@ -170,6 +188,9 @@ path=(/home/nonoho/seccamp/12F/pkttools-1.14/ $path)
 
 path=(/home/nonoho/.plenv/bin $path)
 eval "$(plenv init - zsh)"
+
+path=(/home/nonoho/.ndenv/bin $path)
+eval "$(ndenv init - zsh)"
 
 
 # PATH="/home/nonoho/perl5/bin${PATH:+:${PATH}}"; export PATH;
