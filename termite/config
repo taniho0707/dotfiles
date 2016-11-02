@@ -15,7 +15,7 @@ foreground = #ececdc
 background = rgba(23, 23, 13, 0.92)
 
 # if unset, will reverse foreground and background
-highlight = #2f2f2f
+highlight = #e0e0c0
 
 # colors from color0 to color254 can be set
 color0 = #3f3f3f
