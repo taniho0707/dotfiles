@@ -120,7 +120,7 @@ stack: $LBUFFER"
 zle -N show_buffer_stack
 
 # zsh-prompt
-source /home/nonoho/git/zsh-git-prompt/zshrc.sh
+source ~/git/zsh-git-prompt/zshrc.sh
 
 # peco
 function peco-select-history() {
