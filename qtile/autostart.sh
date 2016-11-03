@@ -4,5 +4,7 @@ nm-applet &
 xscreensaver-command -no-splash &
 xautolock -time 5 -locker 'xscreensaver-command -lock' &
 compton -c -I 0.15 -O 0.2 &
-xss-lock -- xscreensaver-command -lock &
+system-config-printer-applet &
+owncloud &
+# xss-lock -- xscreensaver-command -lock &
 pulseaudio --start
