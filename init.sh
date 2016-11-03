@@ -11,3 +11,5 @@ ln -s ~/dotfiles/qtile/autostart.sh ~/.config/qtile/autostart.sh
 
 ln -s ~/dotfiles/termite/config ~/.config/termite/config
 
+mkdir -p ~/Pictures/screenshot
+
