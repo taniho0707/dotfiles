@@ -98,6 +98,11 @@ keys = [
     #     [mod, "shift"], "Return",
     #     lazy.layout.toggle_split()
     # ),
+
+    # do not work...
+    Key([], "Print", lazy.spawn("maim ~/Pictures/screenshot/$(date +%F-%T).png")),
+    Key(["mod1"], "Print", lazy.spawn("maim -i $(xdotool getactivewindow) ~/Pictures/screenshot/$(date +%F-%T).png")),
+    Key(['shift'], 'Print', lazy.spawn("maim --select ~/Pictures/screenshot/$(date +%F-%T).png")),
     
     Key(
         [mod, 'shift'], 'Return',
