@@ -111,8 +111,6 @@ set $WSi 6:i
 set $WSo 7:o
 set $WSp 8:p
 
-strip_workspace_numbers yes
-
 # switch to workspace
 bindsym $mod+a workspace $WSa
 bindsym $mod+s workspace $WSs
@@ -222,4 +220,5 @@ exec --no-startup-id i3-msg "workspace $WSp; exec mikutter"
 bar {
         status_command i3status
         font pango:DejaVu Sans 10px
+        strip_workspace_numbers yes
 }
