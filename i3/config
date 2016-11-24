@@ -102,14 +102,16 @@ bindsym $mod+z focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $WSa a
-set $WSs s
-set $WSd d
-set $WSf f
-set $WSu u
-set $WSi i
-set $WSo o
-set $WSp p
+set $WSa 1:a
+set $WSs 2:s
+set $WSd 3:d
+set $WSf 4:f
+set $WSu 5:u
+set $WSi 6:i
+set $WSo 7:o
+set $WSp 8:p
+
+strip_workspace_numbers yes
 
 # switch to workspace
 bindsym $mod+a workspace $WSa
@@ -209,6 +211,10 @@ exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/pc_1366_768.jpg
 
 exec --no-startup-id i3-msg "workspace $WSa; exec /usr/bin/termite"
+exec --no-startup-id i3-msg "workspace $WSs; exec /usr/bin/termite"
+exec --no-startup-id i3-msg "workspace $WSd; exec /usr/bin/termite"
+exec --no-startup-id i3-msg "workspace $WSf; exec /usr/bin/firefox"
+exec --no-startup-id i3-msg "workspace $WSp; exec mikutter"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
