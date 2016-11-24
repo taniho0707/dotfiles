@@ -13,3 +13,7 @@ ln -s ~/dotfiles/termite/config ~/.config/termite/config
 
 mkdir -p ~/Pictures/screenshot
 
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/i3status
+ln -s ~/dotfiles/i3/config ~/.config/i3/config
+ln -s ~/dotfiles/i3status/config ~/.config/i3status/config
