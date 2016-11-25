@@ -192,6 +192,11 @@ bindsym XF86AudioMute exec "amixer -q -D pulse set Master toggle"
 bindsym XF86AudioLowerVolume exec "amixer -c 0 -D pulse sset Master 1%- unmute"
 bindsym XF86AudioRaiseVolume exec "amixer -c 0 -D pulse sset Master 1%+ unmute"
 
+# screenshot
+bindsym Print exec "maim ~/Pictures/screenshot/$(date +%F-%T).png"
+bindsym $mod+Print exec "maim -i $(xdotool getactivewindow) ~/Pictures/screenshot/$(date +%F-%T).png"
+bindsym Shift+Print exec "maim --select ~/Pictures/screenshot/$(date +%F-%T).png"
+
 
 focus_follows_mouse no
 
