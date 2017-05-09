@@ -193,6 +193,7 @@ path=(/home/nonoho/.ndenv/bin $path)
 eval "$(ndenv init - zsh)"
 
 path=(/home/nonoho/git/linenotcat/bin $path)
+path=(/home/nonoho/bin/STM32CubeMX $path)
 
 # PATH="/home/nonoho/perl5/bin${PATH:+:${PATH}}"; export PATH;
 # # PERL5LIB="/home/nonoho/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
