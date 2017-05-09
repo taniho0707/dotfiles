@@ -165,7 +165,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # power down
-set $Locker i3lock -i ~/Pictures/Wallpaper/kishimen.png && sleep 1
+set $Locker i3lock -i ~/Pictures/Wallpaper/kabekin372_1366x768.png && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -189,8 +189,8 @@ bindsym $mod+Control+s exec "systemctl suspend"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym XF86AudioMute exec "amixer -q -D pulse set Master toggle"
-bindsym XF86AudioLowerVolume exec "amixer -c 0 -D pulse sset Master 1%- unmute"
-bindsym XF86AudioRaiseVolume exec "amixer -c 0 -D pulse sset Master 1%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -c 0 -D pulse sset Master 5%- unmute"
+bindsym XF86AudioRaiseVolume exec "amixer -c 0 -D pulse sset Master 5%+ unmute"
 bindsym XF86AudioMicMute exec "amixer -c 0 -D pulse set Capture toggle"
 
 # screenshot
@@ -208,17 +208,15 @@ exec_always --no-startup-id nm-applet
 # exec_always --no-startup-id xscreensaver -no-splash
 # exec_always --no-startup-id xautolock -time 5 -locker 'xscreensaver-command -lock'
 # exec_always --no-startup-id xss-lock -- xscreensaver-command -lock
-exec_always --no-startup-id xautolock -time 5 -locker "$Locker"
+exec_always --no-startup-id xautolock -time 10 -locker "$Locker"
 exec_always --no-startup-id compton -c -I 0.15 -O 0.2
 exec_always --no-startup-id system-config-printer-applet
 exec_always --no-startup-id owncloud
 exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id twmnd
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/1366_768_20091126090927427353.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/monogatari-girl-landscape-91973-1366x768.png
 
 exec --no-startup-id i3-msg "workspace $WSa; exec /usr/bin/termite"
-exec --no-startup-id i3-msg "workspace $WSs; exec /usr/bin/termite"
-exec --no-startup-id i3-msg "workspace $WSd; exec /usr/bin/termite"
 exec --no-startup-id i3-msg "workspace $WSf; exec /usr/bin/firefox"
 exec --no-startup-id i3-msg "workspace $WSp; exec mikutter"
 
