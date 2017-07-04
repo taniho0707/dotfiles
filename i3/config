@@ -89,6 +89,8 @@ bindsym $mod+1 layout stacking
 bindsym $mod+2 layout tabbed
 bindsym $mod+3 layout toggle split
 
+workspace_layout tabbed
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -146,10 +148,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -186,11 +188,11 @@ bindsym $mod+q mode "$mode_system"
 # shortcut keys
 bindsym $mod+Control+l exec "xscreensaver-command -lock"
 bindsym $mod+Control+s exec "systemctl suspend"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 2"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 2"
 bindsym XF86AudioMute exec "amixer -q -D pulse set Master toggle"
-bindsym XF86AudioLowerVolume exec "amixer -c 0 -D pulse sset Master 5%- unmute"
-bindsym XF86AudioRaiseVolume exec "amixer -c 0 -D pulse sset Master 5%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -c 0 -D pulse sset Master 2%- unmute"
+bindsym XF86AudioRaiseVolume exec "amixer -c 0 -D pulse sset Master 2%+ unmute"
 bindsym XF86AudioMicMute exec "amixer -c 0 -D pulse set Capture toggle"
 
 # screenshot
