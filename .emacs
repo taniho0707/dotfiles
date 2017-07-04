@@ -21,7 +21,7 @@
  '(magit-commit-arguments nil)
  '(package-selected-packages
    (quote
-    (yaml-mode yasnippet web-mode volatile-highlights undo-tree twittering-mode sync-recentf recentf-ext rainbow-mode rainbow-delimiters r-autoyas quickrun qml-mode php-mode org-present open-junk-file mozc-popup mozc-im matlab-mode markdown-mode magit lua-mode js2-mode helm-flycheck helm-ag haskell-mode graphviz-dot-mode gnuplot-mode gnuplot git-gutter flycheck-tip flycheck-perl6 flycheck-irony ess-R-object-popup ess-R-data-view emoji-fontset emmet-mode e2wm-term e2wm-sww e2wm-pkgex4pl e2wm-bookmark csv-mode company-irony auto-complete-clang-async auto-complete-clang auto-complete-c-headers arduino-mode anzu anything))))
+    (point-undo yaml-mode yasnippet web-mode volatile-highlights undo-tree twittering-mode sync-recentf recentf-ext rainbow-mode rainbow-delimiters r-autoyas quickrun qml-mode php-mode org-present open-junk-file mozc-popup mozc-im matlab-mode markdown-mode magit lua-mode js2-mode helm-flycheck helm-ag haskell-mode graphviz-dot-mode gnuplot-mode gnuplot git-gutter flycheck-tip flycheck-perl6 flycheck-irony ess-R-object-popup ess-R-data-view emoji-fontset emmet-mode e2wm-term e2wm-sww e2wm-pkgex4pl e2wm-bookmark csv-mode company-irony auto-complete-clang-async auto-complete-clang auto-complete-c-headers arduino-mode anzu anything))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
