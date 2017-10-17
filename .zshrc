@@ -157,6 +157,9 @@ export WINEPREFIX=$HOME/.wine
 # pushd
 setopt auto_pushd
 
+# Android
+export JAVA_HOME=/usr/lib/jvm/default
+
 
 # aliases
 alias ls='ls --color -p'
@@ -176,6 +179,11 @@ alias -s {html,htm}=firefox
 
 emacs(){
     command emacs $* &
+}
+
+# ディレクトリ移動と同時にls -lする
+cd () {
+    builtin cd "$@" && l
 }
 
 path=(/usr/share/pear/ $path)
