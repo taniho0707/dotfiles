@@ -141,7 +141,7 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 
-PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b $(git_super_status)
+PROMPT='%B%F{white}%K{blue}%n@%m%k%f %F{green}%~%f%b $(git_super_status) %F{240}%*%f
  %# '
 
 
