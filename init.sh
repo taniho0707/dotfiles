@@ -17,3 +17,5 @@ mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
 ln -s ~/dotfiles/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/i3status/config ~/.config/i3status/config
+
+ln -s ~/dotfiles/rainbowstream/.rainbow_config.json ~/.rainbow_config.json
