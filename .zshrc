@@ -170,6 +170,12 @@ alias lla='ls --color -o -l -a'
 alias gs='git status'
 alias c='clear'
 
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
 # suffix aliases
 alias -s py=python
 alias -s hs=runhaskell
