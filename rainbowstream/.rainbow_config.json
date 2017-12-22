@@ -1,6 +1,6 @@
 {
     "IMAGE_ON_TERM": true,
     "IMAGE_RESIZE_TO_FIT": true,
-    "HIDE_PROMPT": false,
+    "HIDE_PROMPT": true,
     "LIST_MAX": 20
 }
