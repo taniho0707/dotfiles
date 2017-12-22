@@ -221,6 +221,7 @@ exec_always --no-startup-id owncloud
 exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id twmnd
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpaper/monogatari-girl-landscape-91973-1366x768.png
+exec_always --no-startup-id diodon
 
 exec --no-startup-id i3-msg "workspace $WSa; exec /usr/bin/termite"
 exec --no-startup-id i3-msg "workspace $WSf; exec /usr/bin/firefox"
